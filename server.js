@@ -7,7 +7,7 @@ const io = require('socket.io')(server)
 const { v4: uuidv4 } = require('uuid');
 
 const { ExpressPeerServer } = require('peer');
-const peerServer = ExpressPeerServer(server, { debug: true })
+const peerServer = ExpressPeerServer(server, { debug: true, allow_discovery: true })
 app.use(express.static('D:/Zoom Clone/public'))
 app.set("view engine", "ejs")
 
