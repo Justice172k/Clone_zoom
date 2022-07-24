@@ -16,6 +16,8 @@ app.get("/", (req, res) => {
     res.redirect(`/${uuidv4()}`)
 })
 
+const PORT = process.env.PORT || 3000;
+
 io.on('connection', socket => {
     // receive message from client 
     socket.on('join-room', (Room_Id, userId) => {
@@ -31,7 +33,10 @@ io.on('connection', socket => {
 
 
 app.get("/:room", (req, res) => {
-    res.render('room', { roomId: req.params.room })
+    res.render('room', {
+        roomId: req.params.room,
+        PORT: PORT
+    })
 })
-const PORT = process.env.PORT || 3000;
+
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

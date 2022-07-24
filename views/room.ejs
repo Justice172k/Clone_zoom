@@ -9,7 +9,13 @@
     <link rel="stylesheet" href="../public/style.css">
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://unpkg.com/peerjs@1.4.5/dist/peerjs.min.js"></script>
-    <script>const Room_Id = "<%= roomId %>"</script>
+    <script>
+        const Room_Id = "<%= roomId %>"
+        const port = "<%= PORT%>"
+        console.log(Room_Id)
+        console.log(port)
+    </script>
+
     <style>
         #video-grid {
             display: flex;
