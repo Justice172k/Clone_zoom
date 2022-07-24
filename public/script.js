@@ -6,7 +6,7 @@ const peer = new Peer(undefined,
     {
         path: '/peerjs',
         host: '/',
-        port: '3000'
+        port: '50269'
     });
 let myVideoStream
 const myVideo = document.createElement('video')
