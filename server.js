@@ -33,5 +33,6 @@ io.on('connection', socket => {
 app.get("/:room", (req, res) => {
     res.render('room', { roomId: req.params.room })
 })
+console.log(process.env.PORT)
 
-server.listen(port, () => console.log(`Example app listening on port ${port}!`))
+server.listen(process.env.PORT || 3000)
