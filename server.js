@@ -34,4 +34,4 @@ app.get("/:room", (req, res) => {
     res.render('room', { roomId: req.params.room })
 })
 
-server.listen(process.env.PORT || 3000)
+server.listen(port, () => console.log(`Example app listening on port ${port}!`))

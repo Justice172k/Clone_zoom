@@ -6,16 +6,12 @@ const peer = new Peer(undefined,
     {
         path: '/peerjs',
         host: '/',
-        port: '443'
+        port: '3000'
     });
 let myVideoStream
 const myVideo = document.createElement('video')
 myVideo.muted = true
 
-// peer.on('open', id => {
-//     console.log("id chu" + id)
-//     socket.emit('join-room', Room_Id, id)
-// })
 
 navigator.mediaDevices.getUserMedia({
     video: true,
