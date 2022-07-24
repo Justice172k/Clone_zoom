@@ -5,7 +5,7 @@ const app = express()
 const server = require("http").Server(app)
 const io = require('socket.io')(server)
 const { v4: uuidv4 } = require('uuid');
-const port = 3000
+
 const { ExpressPeerServer } = require('peer');
 const peerServer = ExpressPeerServer(server, { debug: true })
 app.use(express.static('D:/Zoom Clone/public'))
@@ -33,6 +33,5 @@ io.on('connection', socket => {
 app.get("/:room", (req, res) => {
     res.render('room', { roomId: req.params.room })
 })
-console.log(process.env.PORT)
-
-server.listen(process.env.PORT || 443)
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
