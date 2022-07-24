@@ -2,16 +2,17 @@ const socket = io('/')
 
 const videoGrid = document.getElementById('video-grid')
 
-const peer = new Peer(undefined,
-    {
-        path: '/peerjs',
-        host: 'https://zoomoftien.herokuapp.com',
-        port: '443'
-    });
 let myVideoStream
 const myVideo = document.createElement('video')
 myVideo.muted = true
 
+
+const peer = new Peer(undefined,
+    {
+        path: '/peerjs',
+        host: '/',
+        port: '443'
+    });
 peer.on('open', id => {
     console.log("id chu" + id)
     socket.emit('join-room', Room_Id, id)
