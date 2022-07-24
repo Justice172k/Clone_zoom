@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
     res.redirect(`/${uuidv4()}`)
 })
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 9000;
 
 io.on('connection', socket => {
     // receive message from client 
