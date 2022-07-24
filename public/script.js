@@ -5,7 +5,7 @@ const videoGrid = document.getElementById('video-grid')
 const peer = new Peer(undefined,
     {
         path: '/peerjs',
-        host: 'https://zoomoftien.herokuapp.com',
+        host: '/',
         port: '443',
         secure: true
 
@@ -21,7 +21,8 @@ navigator.mediaDevices.getUserMedia({
 }).then(stream => {
     myVideoStream = stream
     addVideoStream(myVideo, stream)
-
+    console.log("chua vao");
+    console.log(myVideo)
 
     peer.on('call', call => {
         call.answer(stream);
@@ -54,6 +55,8 @@ const connectedToNewUser = (userId, stream) => {
 }
 const addVideoStream = (video, stream) => {
     video.srcObject = stream;
+    console.log("da vao")
+    console.log(stream)
     video.addEventListener('loadedmetadata', () => {
         video.play();
     })
